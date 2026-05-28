@@ -106,7 +106,7 @@ Why it's structured this way (harness-engineering notes):
 
 ## Stack
 
-- **Runtime:** Node.js 24, TypeScript 5.9, pnpm workspaces
+- **Runtime:** Node.js 22.9+ (targets 24), TypeScript 5.9, pnpm workspaces
 - **API:** Express 5 (`artifacts/api-server`)
 - **Storage:** JSON file (`review_memory_store.json`)
 - **Validation:** Zod (`zod/v4`)
@@ -146,7 +146,7 @@ Environment variables (see `.env.example`):
 ### Run
 
 ```bash
-pnpm dev            # start the API server (loads .env, defaults to port 5000)
+pnpm dev            # start the API server (reads PORT from .env; 5000 in the template)
 pnpm typecheck      # typecheck all packages
 pnpm build          # typecheck + build all packages
 ```
