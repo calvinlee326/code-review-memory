@@ -56,3 +56,13 @@ export type {
   MemoryStore,
   SearchResult,
 } from "./types.js";
+
+// GitHub PR tools
+export {
+  read_pr_diff,
+  post_review_comment,
+  readPrDiffTool,
+  postReviewCommentTool,
+  githubTools,
+} from "./github/index.js";
+export type { PrFileChange, PostedComment, PrCoords, OpenAITool } from "./github/index.js";
