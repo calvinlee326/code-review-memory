@@ -5,7 +5,12 @@
   "type": "module",
   "scripts": {
     "hello": "tsx ./src/hello.ts",
+    "review-loop": "tsx ./src/review-loop.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@workspace/review-memory": "workspace:*",
+    "openai": "^4.103.0"
   },
   "devDependencies": {
     "@types/node": "catalog:",
