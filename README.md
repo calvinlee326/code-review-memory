@@ -8,6 +8,8 @@ conventions.
 Style rules are parsed from `coding_style.md` and review memory is persisted to
 `review_memory_store.json` — no database is required to run the app.
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/calvinlee326/code-review-memory)
+
 ## Live demo
 
 ![PR Code Review Agent UI](docs/demo.png)
@@ -62,6 +64,31 @@ Step by step:
 5. **Execution phase.** Every non-deleted item is posted as an inline review
    comment on the PR, and each is written back into the memory store as a
    recorded error. Emits `comment_posted` per comment, then `done`.
+
+### Example run
+
+Hitting the stream endpoint returns a live SSE feed — one `data:` line per
+`HarnessEvent` as the harness works through the pipeline:
+
+```console
+$ curl -N "https://code-review-memory.onrender.com/api/review/stream?pr_url=https://github.com/owner/repo/pull/42"
+
+data: {"type":"memory_loaded","highlightsLoaded":18,"errorsLoaded":5}
+data: {"type":"files_fetched","total":7,"patchable":4}
+data: {"type":"file_reviewed","filename":"src/auth/login.ts","issueCount":2}
+data: {"type":"file_reviewed","filename":"src/auth/session.ts","issueCount":1}
+data: {"type":"file_reviewed","filename":"src/utils/format.ts","issueCount":0}
+data: {"type":"file_reviewed","filename":"src/api/users.ts","issueCount":3}
+data: {"type":"plan_complete","issues":[ ... 6 candidate issues ... ]}
+data: {"type":"evaluation_complete","kept":3,"modified":1,"deleted":2,"added":1}
+data: {"type":"comment_posted","file":"src/auth/login.ts","line":24,"action":"keep","url":"https://github.com/owner/repo/pull/42#discussion_r..."}
+data: {"type":"comment_posted","file":"src/api/users.ts","line":58,"action":"modify","url":"https://github.com/owner/repo/pull/42#discussion_r..."}
+data: {"type":"done","totalPosted":5}
+```
+
+Note how the **evaluation** pass dropped 2 false positives and added 1
+missed high-severity issue before anything was posted — the planning pass found
+6 candidates, but only 5 high-signal comments reached the PR.
 
 Why it's structured this way (harness-engineering notes):
 
