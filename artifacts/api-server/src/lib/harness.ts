@@ -1,4 +1,5 @@
 import OpenAI from "openai";
+import { resolve } from "path";
 import {
   load_memory,
   read_pr_diff,
@@ -7,6 +8,13 @@ import {
   getStyleHighlights,
 } from "@workspace/review-memory";
 import type { PrFileChange } from "@workspace/review-memory";
+
+// __dirname is set by the esbuild banner to the dist/ directory.
+// From dist/ we go up 3 levels to reach the workspace root:
+//   dist/ → api-server/ → artifacts/ → workspace-root/
+const WORKSPACE_ROOT = resolve(__dirname, "../../..");
+const STYLE_GUIDE_PATH = resolve(WORKSPACE_ROOT, "coding_style.md");
+const STORE_PATH = resolve(WORKSPACE_ROOT, "review_memory_store.json");
 
 // ---------------------------------------------------------------------------
 // Types
@@ -226,7 +234,10 @@ export async function run_harness(
   onEvent: (event: HarnessEvent) => void,
 ): Promise<void> {
   // Step 1: Load memory
-  const { highlightsLoaded, errorsLoaded } = await load_memory();
+  const { highlightsLoaded, errorsLoaded } = await load_memory({
+    styleGuidePath: STYLE_GUIDE_PATH,
+    storePath: STORE_PATH,
+  });
   onEvent({ type: "memory_loaded", highlightsLoaded, errorsLoaded });
 
   const styleRulesText = buildStyleRulesText();
