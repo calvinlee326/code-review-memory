@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: code-review-memory
+    runtime: node
+    plan: free
+    buildCommand: pnpm install && node artifacts/api-server/build.mjs
+    startCommand: node --enable-source-maps artifacts/api-server/dist/index.mjs
+    healthCheckPath: /api/healthz
+    envVars:
+      - key: NODE_VERSION
+        value: 22.15.1
+      - key: NODE_ENV
+        value: production
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: GITHUB_TOKEN
+        sync: false
