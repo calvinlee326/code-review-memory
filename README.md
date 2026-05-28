@@ -24,8 +24,11 @@ Style rules are parsed from `coding_style.md` and review memory is persisted to
 
 ### Prerequisites
 
-- Node.js 24+
-- pnpm
+- Node.js 22.9+ (uses `--env-file-if-exists`)
+- [pnpm](https://pnpm.io/installation)
+
+Runs on macOS, Linux, and Windows — the correct native binaries are installed
+automatically for your platform.
 
 ### Setup
 
@@ -34,21 +37,33 @@ pnpm install
 cp .env.example .env   # then fill in the values
 ```
 
-Required environment variables (see `.env.example`):
+Environment variables (see `.env.example`):
 
-| Variable         | Purpose                                  |
-| ---------------- | ---------------------------------------- |
-| `OPENAI_API_KEY` | Used by the review harness               |
-| `GITHUB_TOKEN`   | Repo read access to fetch PR diffs       |
-| `PORT`           | Server port (optional, defaults to 5000) |
+| Variable         | Purpose                                | Required |
+| ---------------- | -------------------------------------- | -------- |
+| `OPENAI_API_KEY` | Used by the review harness             | yes      |
+| `GITHUB_TOKEN`   | Repo read access to fetch PR diffs     | yes      |
+| `PORT`           | Server port                            | yes (5000 in `.env.example`) |
+
+`.env` is loaded automatically at startup — no need to export variables.
 
 ### Run
 
 ```bash
-pnpm --filter @workspace/api-server run dev   # API server on port 5000
-pnpm run typecheck                            # typecheck all packages
-pnpm run build                                # typecheck + build all packages
+pnpm dev            # start the API server (loads .env, defaults to port 5000)
+pnpm typecheck      # typecheck all packages
+pnpm build          # typecheck + build all packages
 ```
+
+Once running:
+
+- `GET /api/healthz` — health check (`{"status":"ok"}`)
+- `GET /api/` — review web UI
+- `GET /api/review/stream?pr_url=<github-pr-url>` — stream a review over SSE
+
+> **macOS note:** port 5000 is used by the AirPlay Receiver (Control Center).
+> Set `PORT` to something else (e.g. `5050`) in your `.env`, or disable AirPlay
+> Receiver in System Settings → General → AirDrop & Handoff.
 
 ## License
 
