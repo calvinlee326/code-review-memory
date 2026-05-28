@@ -8,6 +8,14 @@ conventions.
 Style rules are parsed from `coding_style.md` and review memory is persisted to
 `review_memory_store.json` — no database is required to run the app.
 
+## Live demo
+
+- **Review UI:** https://code-review-memory.onrender.com/api/
+- **Health check:** https://code-review-memory.onrender.com/api/healthz
+
+> Hosted on Render's free tier — the instance sleeps after inactivity, so the
+> first request may take ~50s to wake. All routes are served under `/api`.
+
 ## Stack
 
 - **Runtime:** Node.js 24, TypeScript 5.9, pnpm workspaces
@@ -64,6 +72,17 @@ Once running:
 > **macOS note:** port 5000 is used by the AirPlay Receiver (Control Center).
 > Set `PORT` to something else (e.g. `5050`) in your `.env`, or disable AirPlay
 > Receiver in System Settings → General → AirDrop & Handoff.
+
+## Deploy
+
+The repo includes a [`render.yaml`](./render.yaml) Blueprint for one-click
+deploys on [Render](https://render.com):
+
+1. **New +** → **Blueprint** → connect this repository.
+2. Render reads `render.yaml` and creates the web service automatically.
+3. Set `OPENAI_API_KEY` and `GITHUB_TOKEN` when prompted (stored in Render, not
+   the repo). `PORT` is injected by Render; no database is needed.
+4. Deploy. The service builds with esbuild and health-checks `/api/healthz`.
 
 ## License
 
