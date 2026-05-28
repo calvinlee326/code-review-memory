@@ -1,7 +1,7 @@
 {
   "styleHighlights": [
     {
-      "id": "be0d3e48-09b6-4c63-97d4-f1c9a157e951",
+      "id": "134a1a18-cc29-4ba2-a923-ac829edba29a",
       "category": "Naming Conventions",
       "rule": "Variables and Functions",
       "description": "Use camelCase for all variable and function names. Names should be descriptive and reveal intent. Avoid single-letter names except for loop indices. Prefix boolean variables with `is`, `has`, or `can`.",
@@ -29,7 +29,7 @@
       "source": "coding_style"
     },
     {
-      "id": "c9a6d294-0d29-4e8b-86c2-6ab87c5ce4d3",
+      "id": "ee25fbef-42ca-4959-84c9-cf234ac7ac79",
       "category": "Naming Conventions",
       "rule": "Classes and Interfaces",
       "description": "Use PascalCase for class names and interface names. Interface names should NOT be prefixed with `I`. Type aliases follow the same PascalCase rule.",
@@ -51,7 +51,7 @@
       "source": "coding_style"
     },
     {
-      "id": "9932b8d7-ea09-40c2-9d3a-20d1b0767d0a",
+      "id": "c4f61d25-c33f-4c19-bdf1-aa7dbe59da25",
       "category": "Naming Conventions",
       "rule": "Constants",
       "description": "Use SCREAMING_SNAKE_CASE for module-level constants that never change. Local `const` bindings inside functions use camelCase.",
@@ -75,7 +75,7 @@
       "source": "coding_style"
     },
     {
-      "id": "7d86a1f8-dbff-40ce-9dd1-2bdca154467b",
+      "id": "baf30ffb-a285-4063-8864-b3907abc900a",
       "category": "Naming Conventions",
       "rule": "Files and Directories",
       "description": "Use kebab-case for file and directory names. Each file should export one primary concern. Barrel index files (`index.ts`) are allowed for re-exporting public APIs.",
@@ -103,7 +103,7 @@
       "source": "coding_style"
     },
     {
-      "id": "e6a2d4a5-6168-4afe-a80e-af8576378642",
+      "id": "05e34cef-054d-43bb-ac89-8570a4ec66ed",
       "category": "Formatting",
       "rule": "Indentation",
       "description": "Use 2 spaces for indentation. Never use tabs. Configure your editor to insert spaces on tab key.",
@@ -121,7 +121,7 @@
       "source": "coding_style"
     },
     {
-      "id": "e46c7225-c2e5-4765-81aa-91f250b3630a",
+      "id": "69a838ca-3baf-4e4e-8059-fbe6a07a5f34",
       "category": "Formatting",
       "rule": "Line Length",
       "description": "Keep lines under 100 characters. Break long function signatures across multiple lines with each parameter on its own line.",
@@ -146,7 +146,7 @@
       "source": "coding_style"
     },
     {
-      "id": "7df14fac-dbe2-432b-82e4-d775d4a3bb2e",
+      "id": "c2675cea-ada0-4899-b37c-c23836f27a21",
       "category": "Formatting",
       "rule": "Trailing Commas",
       "description": "Always include trailing commas in multi-line arrays, objects, function parameters, and imports. This reduces diff noise.",
@@ -169,7 +169,7 @@
       "source": "coding_style"
     },
     {
-      "id": "0b013fff-6aca-4382-ba95-68ad7602f8f1",
+      "id": "24d4d42a-4ca5-4000-9534-bf0b31fd4890",
       "category": "Formatting",
       "rule": "Semicolons",
       "description": "Always end statements with semicolons. Do not rely on ASI (Automatic Semicolon Insertion).",
@@ -187,7 +187,7 @@
       "source": "coding_style"
     },
     {
-      "id": "d5e83cd4-0b62-4da2-9311-0c85b11ee326",
+      "id": "5f92ec9d-0b8e-430a-9ba8-e681c8d30245",
       "category": "Functions",
       "rule": "Single Responsibility",
       "description": "Each function should do one thing. If a function needs a comment to explain what it does, consider splitting it.",
@@ -207,7 +207,7 @@
       "source": "coding_style"
     },
     {
-      "id": "761ce889-6a58-419e-9730-056f48bb8eb1",
+      "id": "961cbe26-9c0e-4f92-a0cf-7d27acc2ea05",
       "category": "Functions",
       "rule": "Pure Functions Preferred",
       "description": "Prefer pure functions with no side effects. When side effects are necessary, document them clearly with a JSDoc comment.",
@@ -227,7 +227,7 @@
       "source": "coding_style"
     },
     {
-      "id": "164ad2a9-bac2-4692-a99e-72a08e191c79",
+      "id": "f752d27a-e111-4309-92e1-64de93fa396f",
       "category": "Functions",
       "rule": "Arrow Functions vs Declarations",
       "description": "Use arrow functions for callbacks and short utilities. Use `function` declarations for top-level named functions and class methods.",
@@ -248,7 +248,7 @@
       "source": "coding_style"
     },
     {
-      "id": "205289a4-4768-4be3-9a7c-e474c97c45fb",
+      "id": "24595a93-e06d-4d0c-8860-27da0843f761",
       "category": "Functions",
       "rule": "Parameter Count",
       "description": "Functions should have at most 3 positional parameters. Beyond that, use an options object and destructure.",
@@ -266,7 +266,7 @@
       "source": "coding_style"
     },
     {
-      "id": "901f0c08-e141-4b2e-87ba-18243d5f2d3d",
+      "id": "86d6f3a8-585d-47d3-a17d-8575b29004b2",
       "category": "Error Handling",
       "rule": "Never Swallow Errors",
       "description": "Never catch an error and do nothing. At minimum, log it. Prefer surfacing errors to the caller.",
@@ -286,7 +286,7 @@
       "source": "coding_style"
     },
     {
-      "id": "404640f0-0e00-4fb7-8203-59f48bb74b8e",
+      "id": "9ef3b183-64be-4059-a021-ef6f1f20b8f9",
       "category": "Error Handling",
       "rule": "Typed Errors",
       "description": "Define custom error classes for domain errors. Do not throw plain strings or generic `Error` objects in domain code.",
@@ -309,7 +309,7 @@
       "source": "coding_style"
     },
     {
-      "id": "fe76a31e-9bbc-43e0-bbf1-27c2ec83efd5",
+      "id": "8060b1ae-2e38-49ac-9d84-7e9608052578",
       "category": "Error Handling",
       "rule": "Async Await Over Callbacks",
       "description": "Use `async/await` over raw Promises or callbacks. Always `await` inside `try/catch` blocks when the result matters.",
@@ -332,7 +332,7 @@
       "source": "coding_style"
     },
     {
-      "id": "bb787d43-f0d0-493e-9b58-94653dd76e1b",
+      "id": "65d05e8f-f638-4f9a-9e5b-49f0d9a45bf1",
       "category": "Error Handling",
       "rule": "Null and Undefined Safety",
       "description": "Never use non-null assertion (`!`) unless you have a proven guarantee. Prefer optional chaining (`?.`) and nullish coalescing (`??`).",
@@ -356,7 +356,7 @@
       "source": "coding_style"
     },
     {
-      "id": "d120481b-c859-42a2-ba9a-dce0e3054ffb",
+      "id": "e6f63a69-34d0-46bc-b8fd-6400d824924b",
       "category": "Types",
       "rule": "Avoid `any`",
       "description": "Never use `any`. Use `unknown` when the type is truly unknown, and narrow it with type guards before use.",
@@ -373,7 +373,7 @@
       "source": "coding_style"
     },
     {
-      "id": "70e0c85e-2712-4654-a582-57760ffcbcf9",
+      "id": "8e41fe8d-17c4-4bc3-8b81-961ff808bfb8",
       "category": "Types",
       "rule": "Explicit Return Types",
       "description": "All exported functions must have explicit return types. Internal helpers are encouraged to have return types too.",
@@ -391,7 +391,7 @@
       "source": "coding_style"
     },
     {
-      "id": "a0b5aad4-681d-42d0-b2c7-9247376a3612",
+      "id": "5dba5482-aa0c-4461-b0cf-15e47d113655",
       "category": "Types",
       "rule": "Prefer Interfaces for Object Shapes",
       "description": "Use `interface` for describing object shapes that may be extended. Use `type` for unions, intersections, and aliases.",
@@ -412,7 +412,7 @@
       "source": "coding_style"
     },
     {
-      "id": "ad761368-6d55-48d8-bc5b-8a689e988130",
+      "id": "21de4942-44cd-4701-b96e-e5d82bcbd1c2",
       "category": "Types",
       "rule": "Readonly Where Possible",
       "description": "Mark properties `readonly` if they should not be mutated after construction. Prefer `readonly` arrays (`ReadonlyArray<T>` or `readonly T[]`).",
@@ -432,7 +432,7 @@
       "source": "coding_style"
     },
     {
-      "id": "7fecd6d0-f241-40cf-8cf5-8952ea57850f",
+      "id": "884730cc-a2b3-424b-9e39-72e2cde5238c",
       "category": "Imports",
       "rule": "Absolute Imports First",
       "description": "Order imports: external packages first, then workspace packages (`@workspace/`), then relative imports. A blank line separates each group.",
@@ -453,7 +453,7 @@
       "source": "coding_style"
     },
     {
-      "id": "e12123e3-747c-4087-9422-3d20020a9d60",
+      "id": "440d9834-cd97-4be1-8222-11d7a84ecf69",
       "category": "Imports",
       "rule": "No Default Exports",
       "description": "Prefer named exports over default exports. Default exports make refactoring harder and IDE support weaker.",
@@ -473,7 +473,7 @@
       "source": "coding_style"
     },
     {
-      "id": "54e9f4a4-6d62-4f8a-ad7e-ec7b5c14e4bc",
+      "id": "938e5604-7671-4032-806c-57747903f978",
       "category": "Imports",
       "rule": "No Unused Imports",
       "description": "Never leave unused imports in a file. Run the linter before committing.",
@@ -490,7 +490,7 @@
       "source": "coding_style"
     },
     {
-      "id": "c6fda2b1-9f5a-4112-bb3e-8837929d87c4",
+      "id": "e5aa429a-e6d5-4d18-ae47-60ad53264905",
       "category": "Comments",
       "rule": "JSDoc for Public APIs",
       "description": "All exported functions, classes, and types must have a JSDoc comment with `@param` and `@returns` annotations.",
@@ -511,7 +511,7 @@
       "source": "coding_style"
     },
     {
-      "id": "57653bc7-a803-4e2e-9bbb-90a7dea496c8",
+      "id": "9f9c830c-c764-49e1-8382-d3b24a49ea0a",
       "category": "Comments",
       "rule": "Inline Comments for Non-Obvious Logic",
       "description": "Add inline comments only when the *why* is non-obvious, not the *what*. The code itself should explain what it does.",
@@ -530,7 +530,7 @@
       "source": "coding_style"
     },
     {
-      "id": "eaf4f3aa-4f75-4f35-bcbb-9cb756d54696",
+      "id": "b2fa71d3-0ee4-400b-a31a-75ec4f1e12d2",
       "category": "Comments",
       "rule": "TODO Format",
       "description": "Use `// TODO(yourname): description` format. Never leave a bare `// TODO` without context.",
@@ -548,7 +548,7 @@
       "source": "coding_style"
     },
     {
-      "id": "918fbc2f-fac9-4eaa-a88a-e24594e8fcb7",
+      "id": "bb98c7f0-0098-4d33-854e-2a22fff2eab5",
       "category": "Testing",
       "rule": "Test File Naming",
       "description": "Name test files `<subject>.test.ts` and place them next to the source file or in a `__tests__` directory.",
@@ -569,7 +569,7 @@
       "source": "coding_style"
     },
     {
-      "id": "e1f56e72-64d2-4047-8b7d-700cfb8db73d",
+      "id": "6a38cab1-fa38-4fce-a186-5363caf3ebb4",
       "category": "Testing",
       "rule": "Arrange Act Assert",
       "description": "Structure tests using the Arrange-Act-Assert (AAA) pattern. Each test should have a single assertion focus.",
@@ -590,7 +590,7 @@
       "source": "coding_style"
     },
     {
-      "id": "1b8b8c76-a8e6-4a4d-9fb0-22138b4842cf",
+      "id": "d57dae5e-f261-45a9-a7b6-56a83adaa41d",
       "category": "Testing",
       "rule": "No Test Logic in Source",
       "description": "Never add test-only code paths to source files (no `if (process.env.NODE_ENV === \"test\")` guards in business logic).",
@@ -613,6 +613,6 @@
     }
   ],
   "reviewErrors": [],
-  "lastUpdated": "2026-05-28T20:12:56.668Z",
-  "version": 2
+  "lastUpdated": "2026-05-28T20:15:00.734Z",
+  "version": 3
 }
